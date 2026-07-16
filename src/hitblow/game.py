@@ -34,6 +34,9 @@ def play(digits=3):
         if not process_turn(tries, secret):          # ← ★追加
             break                                    # ← ★追加
 
+        from .high_low import print_high_low_hint    # ← ★high_low追加
+        print_high_low_hint(guess, secret, digits)   # ← ★high_low追加
+
         if len(guess) != digits or not guess.isdigit():
             print(f"{digits} 桁の数字で入力してね")
             continue
