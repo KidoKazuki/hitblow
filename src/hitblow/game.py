@@ -15,6 +15,9 @@ def play(digits=3):
 
     # ===== ① 開始時に足す（難易度・あいさつ など）: ここに書く =====
 
+    from .random_digits import randomize_game    # ← ★random_digits追加
+    digits, secret = randomize_game()            # ← ★random_digits追加
+
     from .turn_limit import print_start_message  # ← ★追加
     print_start_message()                        # ← ★追加
 
