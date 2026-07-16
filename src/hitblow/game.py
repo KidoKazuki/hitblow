@@ -15,6 +15,9 @@ def play(digits=3):
 
     # ===== ① 開始時に足す（難易度・あいさつ など）: ここに書く =====
 
+    from .turn_limit import print_start_message  # ← ★追加
+    print_start_message()                        # ← ★追加
+
     tries = 0
     while True:
         guess = input("予想 > ").strip()
@@ -23,6 +26,10 @@ def play(digits=3):
         # 例:  from .hint import hint
         #      if guess == "h":
         #          print(hint(secret)); continue
+
+        from .turn_limit import process_turn         # ← ★追加
+        if not process_turn(tries, secret):          # ← ★追加
+            break                                    # ← ★追加
 
         if len(guess) != digits or not guess.isdigit():
             print(f"{digits} 桁の数字で入力してね")
