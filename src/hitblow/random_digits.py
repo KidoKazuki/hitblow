@@ -8,5 +8,5 @@ def randomize_game() -> tuple[int, str]:
     digits = random.randint(3, 5)
     secret = make_secret(digits)
     
-    print(f"🎲 【難易度ランダム】今回は【 {digits} 桁 】で勝負です！")
+    print(f"Hit & Blow（{digits} 桁・重複なし）")
     return digits, secret
