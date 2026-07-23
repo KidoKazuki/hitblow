@@ -55,5 +55,5 @@ def play(digits=3):
 
         # ユーザーが外れたら、CPUのターン！
         from .vs_cpu import play_cpu_turn        # ← ★対戦モード追加
-        if play_cpu_turn(digits):                # ← ★対戦モード追加
+        if play_cpu_turn(digits, secret):        # ← ★対戦モード追加
             break                                # ← ★対戦モード追加
